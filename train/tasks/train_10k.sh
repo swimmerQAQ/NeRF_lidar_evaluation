@@ -1,0 +1,1 @@
+python train.py  -d /SSD_DISK/users/kuangshaochen/nus_data -ac ./config/arch/darknet53-1024px_noremission.yaml -dc ./config/labels/nuscenes_supp_real10k.yaml

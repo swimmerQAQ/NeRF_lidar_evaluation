@@ -1,0 +1,287 @@
+name: "kitti"
+color_map: # bgr
+  0 : [0, 0, 0]
+  1 : [0, 0, 255]
+  10: [245, 150, 100]
+  11: [245, 230, 100]
+  13: [250, 80, 100]
+  15: [150, 60, 30]
+  16: [255, 0, 0]
+  18: [180, 30, 80]
+  20: [255, 0, 0]
+  30: [30, 30, 255]
+  31: [200, 40, 255]
+  32: [90, 30, 150]
+  40: [255, 0, 255]
+  44: [255, 150, 255]
+  48: [75, 0, 75]
+  49: [75, 0, 175]
+  50: [0, 200, 255]
+  51: [50, 120, 255]
+  52: [0, 150, 255]
+  60: [170, 255, 150]
+  70: [0, 175, 0]
+  71: [0, 60, 135]
+  72: [80, 240, 150]
+  80: [150, 240, 255]
+  81: [0, 0, 255]
+  99: [255, 255, 50]
+  252: [245, 150, 100]
+  256: [255, 0, 0]
+  253: [200, 40, 255]
+  254: [30, 30, 255]
+  255: [90, 30, 150]
+  257: [250, 80, 100]
+  258: [180, 30, 80]
+  259: [255, 0, 0]
+labels:
+  0: 'ignore'
+  1: 'animal'
+  2: 'human.pedestrian.adult'
+  3: 'human.pedestrian.child'
+  4: 'human.pedestrian.construction_worker'
+  5: 'human.pedestrian.personal_mobility'
+  6: 'human.pedestrian.police_officer'
+  7: 'human.pedestrian.stroller'
+  8: 'human.pedestrian.wheelchair'
+  9: 'movable_object.barrier'
+  10: 'movable_object.debris'
+  11: 'movable_object.pushable_pullable'
+  12: 'movable_object.trafficcone'
+  13: 'static_object.bicycle_rack'
+  14: 'vehicle.bicycle'
+  15: 'vehicle.bus.bendy'
+  16: 'vehicle.bus.rigid'
+  17: 'vehicle.car'
+  18: 'vehicle.construction'
+  19: 'vehicle.emergency.ambulance'
+  20: 'vehicle.emergency.police'
+  21: 'vehicle.motorcycle'
+  22: 'vehicle.trailer'
+  23: 'vehicle.truck'
+  24: 'flat.driveable_surface'
+  25: 'flat.other'
+  26: 'flat.sidewalk'
+  27: 'flat.terrain'
+  28: 'static.manmade'
+  29: 'static.other'
+  30: 'static.vegetation'
+  31: 'vehicle.ego'
+city_labels:
+  0: 'road' # driveable_surface
+  1: 'sidewalk' # sidewalk
+  2: 'building' # manmade
+  3: 'wall' # manmade
+  4: 'fence' # manmade
+  5: 'pole' # manmade
+  6: 'traffic-light' # manmade
+  7: 'traffic-sign' # manmade
+  8: 'vegetation'
+  9: 'terrain'
+  10: 'sky' # None
+  11: 'person'
+  12: 'rider'
+  13: 'car'
+  14: 'truck'
+  15: 'bus'
+  16: 'train'
+  17: 'motorcycle'
+  18: 'bicycle'
+new_labels:
+  0: 'road'
+  1: 'vegetation'
+  2: 'terrain'
+  3: 'vehicle'
+  # 5: 'truck'
+  # 6: 'bus'
+  4: 'manmade'
+  255: 'unlabel'
+
+  # 0: 'road'
+  # 1: 'sidewalk'
+  # # 2: 'building'
+  # # 3: 'wall'
+  # # 4: 'fence'
+  # # 5: 'pole'
+  # # 6: 'traffic-light'
+  # # 7: 'traffic-sign'
+  # 2: 'vegetation'
+  # 3: 'terrain'
+  # # 4: 'person'
+  # # 5: 'rider'
+  # # 4: 'car'
+  # # 5: 'truck'
+  # # 6: 'bus'
+  # 4: 'vehicle'
+  # # 7: 'train'
+  # # 10: 'motorcycle'
+  # # 11: 'bicycle'
+  # 5: 'manmade'
+  # 255: 'unlabel'
+content: # as a ratio with the total number of points
+  0: 0
+  1: 0
+  2: 0
+  3: 0
+  4: 0
+  5: 0
+  6: 0
+  7: 0
+  8: 0
+  9: 0
+  10: 0
+  11: 0
+  12: 0
+  13: 0
+  14: 0
+  15: 0.01
+  16: 0.02
+  17: 0.05
+  18: 0.02
+  19: 0.001
+  20: 0.008
+  21: 0
+  22: 0
+  23: 0.04
+  24: 0.30
+  25: 0.01
+  26: 0.05
+  27: 0.20
+  28: 0.25
+  29: 0
+  30: 0.25
+  31: 0
+  # 0: 0.018889854628292943
+  # 1: 0.0002937197336781505
+  # 10: 0.040818519255974316
+  # 11: 0.00016609538710764618
+  # 13: 2.7879693665067774e-05
+  # 15: 0.00039838616015114444
+  # 16: 0.0
+  # 18: 0.0020633612104619787
+  # 20: 0.0016218197275284021
+  # 30: 0.00017698551338515307
+  # 31: 1.1065903904919655e-08
+  # 32: 5.532951952459828e-09
+  # 40: 0.1987493871255525
+  # 44: 0.014717169549888214
+  # 48: 0.14392298360372
+  # 49: 0.0039048553037472045
+  # 50: 0.1326861944777486
+  # 51: 0.0723592229456223
+  # 52: 0.002395131480328884
+  # 60: 4.7084144280367186e-05
+  # 70: 0.26681502148037506
+  # 71: 0.006035012012626033
+  # 72: 0.07814222006271769
+  # 80: 0.002855498193863172
+  # 81: 0.0006155958086189918
+  # 99: 0.009923127583046915
+  # 252: 0.001789309418528068
+  # 253: 0.00012709999297008662
+  # 254: 0.00016059776092534436
+  # 255: 3.745553104802113e-05
+  # 256: 0.0
+  # 257: 0.00011351574470342043
+  # 258: 0.00010157861367183268
+  # 259: 4.3840131989471124e-05
+
+  # animal:	0.01%
+  # human.pedestrian.adult: 2.73%
+  # human.pedestrian.child:	0.01%
+  # human.pedestrian.construction_worker:	0.18%
+  # human.pedestrian.personal_mobility: 0.01%
+  # human.pedestrian.police_officer:	0.01%
+  # human.pedestrian.stroller:	0.01%
+  # human.pedestrian.wheelchair:	0.02%
+  # movable_object.barrier:	11.79%
+  # movable_object.debris:	0.08%
+  # movable_object.pushable_pullable:	0.91%
+  # movable_object.trafficcone:	0.93%
+  # static_object.bicycle_rack:	0.21%
+  # vehicle.bicycle:	0.18%
+  # vehicle.bus.bendy:	0.45%
+  # vehicle.bus.rigid:	5.38%
+  # vehicle.car:	48.27%
+  # vehicle.construction:	1.92%
+  # vehicle.emergency.ambulance:	0.00%
+  # vehicle.emergency.police:	0.08%
+  # vehicle.motorcycle:	0.54%
+  # vehicle.trailer:	6.22%
+  # vehicle.truck:	20.07%
+
+learning_map:
+  0: 5 # 'noise'
+  1: 5 # 'animal'
+  2: 5 # 'human.pedestrian.adult'
+  3: 5 # 'human.pedestrian.child'
+  4: 5 # 'human.pedestrian.construction_worker'
+  5: 5 # 'human.pedestrian.personal_mobility'
+  6: 5 # 'human.pedestrian.police_officer'
+  7: 5 # 'human.pedestrian.stroller'
+  8: 5 # 'human.pedestrian.wheelchair'
+  9: 5 # 'movable_object.barrier'
+  10: 5 # 'movable_object.debris'
+  11: 5 # 'movable_object.pushable_pullable'
+  12: 5 # 'movable_object.trafficcone'
+  13: 5 # 'movable_object.trafficcone'
+  14: 5 # 'vehicle.bicycle'
+  15: 3 # 'vehicle.bus.bendy'
+  16: 3 # 'vehicle.bus.rigid'
+  17: 3 # 'vehicle.bus.rigid'
+  18: 5 # 'vehicle.construction'
+  19: 5 # 'vehicle.emergency.ambulance'
+  20: 5 # 'vehicle.emergency.police'
+  21: 5 # 'vehicle.motorcycle'
+  22: 5 # 'vehicle.trailer'
+  23: 3 # 'vehicle.truck'
+  24: 0 # 'flat.driveable_surface'
+  25: 5 # 'flat.other'
+  26: 5 # 'flat.sidewalk'
+  27: 2 # 'flat.terrain'
+  28: 4 # 'static.manmade'
+  29: 5 # 'static.other'
+  30: 1 # 'static.vegetation'
+  31: 5 # 'vehicle.ego'
+
+split: # sequence numbers
+  train:
+    - 1
+ 
+  valid:
+    - 15
+  test:
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
+    - 21
+learning_ignore: # Ignore classes
+  0: False      # "unlabeled", and others ignored
+  1: False     # "car"
+  2: False     # "bicycle"
+  3: False     # "motorcycle"
+  4: False     # "truck"
+  # 5: False     # "other-vehicle"
+  5: True     # "person"
+
+learning_map_inv: # inverse of previous map
+  0: 24     # road
+  # 1: 26   # sidewalk
+  1: 30     # vegetation
+  2: 27     # terrain
+  3: 17     # vehicle
+  4: 28     # manmade
+  5: 0      # ignore
+
+dataset:
+      train_path: '/SSD_DISK/users/kuangshaochen/nus_data'
+      train_scale: 50
+      train_scene: ['real_200']
+      valid_path: '/SSD_DISK/users/kuangshaochen/nus_data'
