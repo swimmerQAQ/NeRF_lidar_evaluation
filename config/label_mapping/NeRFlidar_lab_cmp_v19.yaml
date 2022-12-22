@@ -1,0 +1,129 @@
+
+#----------------------#
+#文件描述 相较于 v1 v2config 修改在 label_v2 增加 split 的数据量上 10k
+#         相较于 v2 在修改在 label_v2 增加 直接val 和 distance mask
+labels:
+  0: 'noise'
+  1: 'animal'
+  2: 'human.pedestrian.adult'
+  3: 'human.pedestrian.child'
+  4: 'human.pedestrian.construction_worker'
+  5: 'human.pedestrian.personal_mobility'
+  6: 'human.pedestrian.police_officer'
+  7: 'human.pedestrian.stroller'
+  8: 'human.pedestrian.wheelchair'
+  9: 'movable_object.barrier'
+  10: 'movable_object.debris'
+  11: 'movable_object.pushable_pullable'
+  12: 'movable_object.trafficcone'
+  13: 'static_object.bicycle_rack'
+  14: 'vehicle.bicycle'
+  15: 'vehicle.bus.bendy'
+  16: 'vehicle.bus.rigid'
+  17: 'vehicle.car'
+  18: 'vehicle.construction'
+  19: 'vehicle.emergency.ambulance'
+  20: 'vehicle.emergency.police'
+  21: 'vehicle.motorcycle'
+  22: 'vehicle.trailer'
+  23: 'vehicle.truck'
+  24: 'flat.driveable_surface'
+  25: 'flat.other'
+  26: 'flat.sidewalk'
+  27: 'flat.terrain'
+  28: 'static.manmade'
+  29: 'static.other'
+  30: 'static.vegetation'
+  31: 'vehicle.ego'
+labels_8:
+  0: 'road'
+  1: 'sidewalk'
+  2: 'vegetation'
+  3: 'terrain'
+  4: 'vehicle'
+  # 5: 'truck'
+  # 6: 'bus'
+  5: 'manmade'
+  255: 'unlabel'
+learning_map:
+  0: 255 # 'noise'
+  1: 255 # 'animal'
+  2: 255 # 'human.pedestrian.adult'
+  3: 255 # 'human.pedestrian.child'
+  4: 255 # 'human.pedestrian.construction_worker'
+  5: 255 # 'human.pedestrian.personal_mobility'
+  6: 255 # 'human.pedestrian.police_officer'
+  7: 255 # 'human.pedestrian.stroller'
+  8: 255 # 'human.pedestrian.wheelchair'
+  9: 255 # 'movable_object.barrier'
+  10: 255 # 'movable_object.debris'
+  11: 255 # 'movable_object.pushable_pullable'
+  12: 255 # 'movable_object.trafficcone'
+  13: 255 # 'movable_object.trafficcone'
+  14: 255 # 'vehicle.bicycle'
+  15: 4 # 'vehicle.bus.bendy'
+  16: 4 # 'vehicle.bus.rigid'
+  17: 4 # 'vehicle.bus.rigid'
+  18: 255 # 'vehicle.construction'
+  19: 255 # 'vehicle.emergency.ambulance'
+  20: 255 # 'vehicle.emergency.police'
+  21: 255 # 'vehicle.motorcycle'
+  22: 255 # 'vehicle.trailer'
+  23: 4 # 'vehicle.truck'
+  24: 0 # 'flat.driveable_surface'
+  25: 255 # 'flat.other'
+  26: 1 # 'flat.sidewalk'
+  27: 3 # 'flat.terrain'
+  28: 5 # 'static.manmade'
+  29: 255 # 'static.other'
+  30: 2 # 'static.vegetation'
+  31: 255 # 'vehicle.ego'
+
+#v2 change
+split:
+      train:  'train.txt'
+      val:    'val.txt'
+data_scale: 25  #1k ######### only simulation
+val_only: False
+# data_scale: 1250 #250000/40
+# data_scale: 2500 #500000/40
+# val_data_scale: 25
+
+# v3 change
+#origin data near = 0 far = 100
+mask_flag: False
+far : 50
+near : 10
+
+# v4 simulation
+simu_flag: False   ########## simu path结尾不能是 / 号 ！！！！！
+simu_path: "../semantickitti_nerf_city/sequences"
+hybrid_simu: 
+          train: [ '00', '01' , '02' ,'04','05']
+
+          
+nerf_mapping:
+  0: 0
+  1: 1
+  2: 5
+  3: 5
+  4: 5
+  5: 5
+  6: 5
+  7: 5
+  8: 2
+  9: 3
+  10: 255
+  11: 255
+  12: 255
+  13: 4
+  14: 4
+  15: 4
+  16: 255
+  17: 255
+  18: 255
+
+compare_simu:
+          flag: True  ######### true will close all nus_data
+          train: [ '190', '191' , '192' , '193' ,'194','195','196','197','198',]
+          val: ['90' , ]

@@ -1,0 +1,7 @@
+NeRFlidar_city : raw setting  (4w6 points)
+NeRFlidar_city v2 : half points (2w4 points)
+NeRFlidar_city v3 : half points + new label + depth refine 
+NeRFlidar_city v4 : half points + new label + wo depth refine
+NeRFlidar_city v5 : half points + (snerf v3 label) + wo depth refine
+
+NeRFlidar_city v6 : finetune depth (2w6 depth)+ new label

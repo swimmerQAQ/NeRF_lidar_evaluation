@@ -1,0 +1,80 @@
+# Config format schema number
+format_version: 4
+
+#----------------------#
+#文件描述 v2相较于 v1 v2config 修改在 label_v2 增加 split  的数据量上 10k
+#         v3相较于 v2 在       修改在 label_v3 增加  distance mask
+#         v4相较于 v3 在        修改在 label_v4 增加simu lation 接口
+####################### 当前v5 用于 simu 全部 ＋ 1000 real
+## Model options
+model_params:
+  model_architecture: "cylinder_asym"
+
+  output_shape:
+    - 480
+    - 360
+    - 32
+
+  fea_dim: 8
+  out_fea_dim: 256
+  num_class: 6
+  num_input_features: 16
+  use_norm: True
+  init_size: 32
+
+#export CUDA_VISIBLE_DEVICES=0,1
+####################################v6 v8 real 5000
+## Dataset options
+dataset_params:
+  dataset_type: "cylinder_dataset"
+  pc_dataset_type: "SemKITTI_nus32_lidar"
+  pc_dataset_type_val: "SemKITTI_nus32_lidar"
+  ignore_label: 255
+  return_test: False
+  fixed_volume_space: True
+  label_mapping: "./config/label_mapping/NeRFlidar_lab_cmp_v7.yaml"
+  label_mapping_val: "./config/label_mapping/NeRFlidar_lab_cmp_v7.yaml"
+  max_volume_space:
+    - 50
+    - 3.1415926
+    - 2
+  min_volume_space:
+    - 0
+    - -3.1415926
+    - -4
+
+
+###################
+## Data_loader options
+train_data_loader:
+  # data_path: "../semantickitti_nerf_city/sequences"################### all close
+  data_path: "../nus_data/sequences"
+  imageset: "train"
+  return_ref: False
+  batch_size: 4
+  shuffle: True
+  num_workers: 4
+
+val_data_loader:
+  data_path: "../nus_data/sequences"
+  
+  imageset: "val"
+  return_ref: False
+  batch_size: 4
+  shuffle: true
+  num_workers: 4
+
+
+###################  export CUDA_VISIBLE_DEVICES=0,1
+## Train params
+train_params:
+  exp_path: "./exp/NeRFlidar_cmp_v7"
+  model_load_path: "./NeRFlidar_cmp_v7.pth"
+  model_save_path: "./NeRFlidar_cmp_v7.pth"
+  checkpoint_every_n_steps: 1000
+  max_num_epochs: 40
+  eval_every_n_steps: 5000
+  learning_rate: 0.001
+
+
+                  
