@@ -85,7 +85,7 @@ split:
       train:  'train.txt'
       val:    'val.txt'
 data_scale: 25  #1k ######### only simulation
-val_only: False
+val_only: True
 # data_scale: 1250 #250000/40
 # data_scale: 2500 #500000/40
 # val_data_scale: 25
@@ -97,11 +97,11 @@ far : 50
 near : 10
 
 # v4 simulation
-simu_flag: False   ########## simu path结尾不能是 / 号 ！！！！！
-simu_path: "../semantickitti_nerf_city/sequences"
+simu_flag: True   ########## simu path结尾不能是 / 号 ！！！！！
+simu_path: "../../../semantickitti_nerf_city/sequences"
 hybrid_simu: 
           train: [ '00', '01' , '02' ,'04','05']
-          val: ['90']
+          val: []
 nerf_mapping:
   0: 0    
   1: 255
@@ -124,8 +124,9 @@ nerf_mapping:
   18: 255
 
 compare_simu:
-          flag: True  ######### true will close all nus_data
-          train: ['462','463']
+          flag: False  ######### true will close all nus_data
+          # train: ['462','463']
+          train: ['419' , '418']
           select: 0
           val: ['real_supp_20' ,]
 

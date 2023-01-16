@@ -593,8 +593,8 @@ class SemKITTI_nus32_lidar(data.Dataset):
         return len(self.im_idx)
 
     def __getitem__(self, index):
-        self.im_idx[index] = self.temp_list[self.temp_num]
-        self.temp_num += 1
+        # self.im_idx[index] = self.temp_list[self.temp_num]
+        # self.temp_num += 1
         # raw_data = np.fromfile(self.im_idx[index], dtype=np.float32,count=-1).reshape((-1, 5))
         # lidarseg_labels_filename = self.im_idx[index].replace('velodyne', 'labels')[:-3] + 'label'
         # points_label = np.fromfile(lidarseg_labels_filename, dtype=np.uint8).reshape([-1, 1])
@@ -628,7 +628,7 @@ class SemKITTI_nus32_lidar(data.Dataset):
             # print("after mask : far ", polar_coor.max(0)[0])
             pass
 
-        print("load: " , self.im_idx[index])
+        # print("load: " , self.im_idx[index])
         # print(polar_coor.shape , points_label.shape)
         data_tuple = (raw_data[:, :3], points_label.astype(np.uint8))
         if self.return_ref:

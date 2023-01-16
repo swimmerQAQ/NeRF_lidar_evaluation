@@ -122,10 +122,10 @@ def main(args):
             
                 ##################################
                 for count, i_val_grid in enumerate(val_grid):
-                    print("val num" , i_iter_val)
-                    np.save('/SSD_DISK/users/kuangshaochen/Cylinder3D/visiual_real/labels/{:04d}.npy'.format(i_iter_val), 
-                    predict_labels[count, val_grid[count][:, 0], val_grid[count][:, 1],
-                                                        val_grid[count][:, 2]].flatten())
+                    # print("val num" , i_iter_val)
+                    # np.save('/SSD_DISK/users/kuangshaochen/Cylinder3D/visiual_real/labels/{:04d}.npy'.format(i_iter_val), 
+                    # predict_labels[count, val_grid[count][:, 0], val_grid[count][:, 1],
+                                                        # val_grid[count][:, 2]].flatten())
 
                     hist_list.append(fast_hist_crop(predict_labels[
                                                         count, val_grid[count][:, 0], val_grid[count][:, 1],
@@ -138,7 +138,7 @@ def main(args):
         iou = per_class_iu(sum(hist_list))
         # import pdb;pdb.set_trace()
         # import pdb;pdb.set_trace()
-        print('Validation per class iou: ')
+        # print('Validation per class iou: ')
         for class_name, class_iou in zip(unique_label_str, iou):
             print('%s : %.2f%%' % (class_name, class_iou * 100))
         val_miou = np.nanmean(iou) * 100

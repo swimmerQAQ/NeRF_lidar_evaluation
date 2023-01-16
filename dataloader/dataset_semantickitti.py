@@ -202,8 +202,8 @@ class cylinder_dataset(data.Dataset):
         else:
             raise Exception('Return invalid data tuple')
         #################visiualize
-        temp = np.array(xyz)
-        np.save('/SSD_DISK/users/kuangshaochen/Cylinder3D/visiual_real/velodyne/{:04d}.npy'.format(index), temp)
+        # temp = np.array(xyz)
+        # np.save('/SSD_DISK/users/kuangshaochen/Cylinder3D/visiual_real/velodyne/{:04d}.npy'.format(index), temp)
         # self.file_write.write("{:05d}\n".format(index))
         # print("txt record index",index)
         ##########################################3
